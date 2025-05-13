@@ -24,8 +24,8 @@ public class ScheduleService implements IScheduleService {
     private final ScheduleUserRepo scheduleUserRepo;
 
     public List<ScheduleModel> getAllBy(Date date, Long i) {
-        Optional<Schedule> op = scheduleRepo.findByHour_IdAndDate(i,date);
-        return op.map(e -> List.of(convertToModel(e))).orElse(new ArrayList<>());
+        List<Schedule> op = scheduleRepo.findByHour_IdAndDate(i,date);
+        return op.stream().map(this::convertToModel).collect(Collectors.toList());
 
     }
 

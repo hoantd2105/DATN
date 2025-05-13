@@ -139,7 +139,7 @@ public class BookingService implements IBookingService {
                             mailService.sendMail(
                                 conflictingBooking.getEmail(),
                                 "Thư hủy lịch khám",
-                                "<h2>Lịch hẹn của bạn đã bị hủy đột xuất. " +
+                                "<h2>Xin chào " + conflictingBooking.getFullName() + " .Lịch hẹn của bạn đã bị hủy đột xuất. " +
                                 "Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.</h2>"
                             );
                         } catch (MessagingException ex) {
