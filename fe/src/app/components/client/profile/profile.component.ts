@@ -101,4 +101,29 @@ export class ProfileComponent {
       console.log('form khong hop le')
     }
   }
+
+  huyLichHen(id: number) {
+    const x = confirm('Bạn có chắc chắn muốn hủy lịch hẹn này không?');
+    if(x == true) {
+      this.bookingSv.delete(id).subscribe({
+      next: (value) => {
+        alert('Đã hủy thành công');
+        this.bookingSv.getAllBooking('ACCEPTING', null, formatDate(new Date(), 'dd/MM/yyyy', 'en-US'), null, storageUtils.get('profile').gmail).subscribe(res => {
+          this.lsaptoi = res;
+
+          // Làm mới DataTables
+          if (this.dtElement && this.dtElement.dtInstance) {
+            this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+              dtInstance.destroy(); // Hủy DataTables cũ
+              this.dtTrigger.next(null); // Kích hoạt lại DataTables
+            });
+          }
+        });
+      },
+      error(err) {
+        alert('có lỗi: ' + err)
+      },
+    })
+    }
+  }
 }

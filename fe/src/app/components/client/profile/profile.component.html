@@ -112,7 +112,8 @@
               <td>{{item.major}}</td>
               <td><span class="status-pending">Đang chờ khám</span></td>
               <td>
-                <button type="button" class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#basicModalxoa">
+                <button type="button" class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#basicModalxoa"
+                  (click)="huyLichHen(item.id)">
                   <i class="fas fa-trash-alt"></i>
                 </button>
               </td>
