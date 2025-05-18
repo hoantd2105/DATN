@@ -49,7 +49,7 @@ export class ScheduleComponent {
       phone: ['',Validators.compose([Validators.minLength(9),Validators.maxLength(12),Validators.required])],
       email: ['',Validators.compose([Validators.email,Validators.required])],
       gender: ['MALE',Validators.required],
-      address: ['',Validators.compose([Validators.required,Validators.minLength(10),Validators.maxLength(50)])],
+      address: ['',Validators.compose([Validators.required,Validators.minLength(1),Validators.maxLength(50)])],
       idMajor: ['',Validators.required],
       idUser: ['',Validators.required],
       date: ['',Validators.required],

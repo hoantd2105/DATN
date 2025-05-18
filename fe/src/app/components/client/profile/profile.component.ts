@@ -27,7 +27,7 @@ export class ProfileComponent {
     var pro = storageUtils.get('profile');
     this.profileForm = this.formbuilder.group({
       fullName: [pro.fullName || ''],
-      dob: [formatDate(new Date(pro.dob), 'dd/MM/yyyy', 'en-US') || ''],
+      dob: [formatDate(new Date(pro.dob), 'yyyy-MM-dd', 'en-US') || ''],
       gender: [pro.gender || ''],
       phone: [pro.phone || ''],
       bhyt: [pro.bhyt || ''],
