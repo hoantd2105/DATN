@@ -34,7 +34,7 @@ export class ScheduleComponent {
   listHour!:Observable<Hour[]>;
   listHourTrung : number[] = [];
   profileInfor = storageUtils.get('profile');
-  minDate: Date = new Date();
+  minDate: Date = new Date(Date.now() + 24 * 60 * 60 * 1000);
 
   addForm!: FormGroup;
 
