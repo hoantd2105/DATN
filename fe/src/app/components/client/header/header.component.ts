@@ -46,7 +46,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   signout() {
     storageUtils.remove('userId');
     storageUtils.remove('roleId');
-    storageUtils.remove('fullName');
+    storageUtils.remove('profile');
+    storageUtils.remove('jwt');
     window.location.reload();
   }
   // Close mobile menu when window is resized to desktop size
